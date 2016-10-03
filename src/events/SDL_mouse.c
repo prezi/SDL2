@@ -113,7 +113,7 @@ SDL_SetMouseFocus(SDL_Window * window)
        so you can drag things out of the window and then get the mouse up
        when it happens.  So, #if 0...
     */
-#if 0
+#ifdef __EMSCRIPTEN__
     if (mouse->focus && !window) {
         /* We won't get anymore mouse messages, so reset mouse state */
         SDL_ResetMouse();
